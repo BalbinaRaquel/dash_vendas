@@ -5,21 +5,21 @@ import pandas as pd
 
 app = Dash(__name__)
 
-# assume you have a "long-form" data frame
-# see https://plotly.com/python/px-arguments/ for more options
-df = pd.DataFrame({
-    "Fruit": ["Apples", "Oranges", "Bananas", "Apples", "Oranges", "Bananas"],
-    "Amount": [4, 1, 2, 2, 4, 5],
-    "City": ["SF", "SF", "SF", "Montreal", "Montreal", "Montreal"]
-})
+# Criando a tabela de dados (base de dados)
 
-fig = px.bar(df, x="Fruit", y="Amount", color="City", barmode="group")
+df = pd.read_excel('Vendas.xlsx')
+
+# Criando gráfico de barras
+fig = px.bar(df, x="Produto", y="Quantidade", color="ID Loja", barmode="group")
+
+
 
 app.layout = html.Div(children=[
-    html.H1(children='Hello Dash'),
+    html.H1(children='Faturamento das Lojas'),
+    html.H2(children='Gráfico com o faturamento de todos os produtos separados por Loja'),
 
     html.Div(children='''
-        Dash: A web application framework for your data.
+        Esse gráfico mostra a quantidade de produtos vendidos, não o faturamento.
     '''),
 
     dcc.Graph(

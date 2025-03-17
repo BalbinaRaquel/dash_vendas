@@ -73,5 +73,7 @@ git clone https://github.com/BalbinaRaquel/dash_vendas.git
 
 ###
 
-<img align="center" height="150" src="https://i.imgflip.com/65efzo.gif"  />
+<div align="center">
+  <img height="200" src="https://i.imgflip.com/65efzo.gif"  />
+</div>
 
